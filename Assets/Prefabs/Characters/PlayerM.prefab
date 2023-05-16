@@ -263,6 +263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpText: {fileID: 0}
   damagable: {fileID: 1615095148690019602}
+  toolNameText: {fileID: 0}
+  ammoCountText: {fileID: 0}
+  toolHolder: {fileID: 0}
 --- !u!114 &-141512062052948715
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,8 +11,11 @@ public class MovementController : MonoBehaviour
     public float bfactor = 15f;
     public float jfrc = 5f;
     public float mfrc = 50f; 
+    public float groundColliderMultiplier = .75f; 
+    public float groundProbeDistance = .05f; 
 
     Rigidbody rb;
+    CapsuleCollider cc;
     InputListener il;
 
     bool grounded = false;
@@ -27,6 +30,7 @@ public class MovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         defaultDrag = rb.drag;
+        cc = GetComponent<CapsuleCollider>();
 
         il = GetComponent<InputListener>();
     }
@@ -45,7 +49,12 @@ public class MovementController : MonoBehaviour
         maxspd = il.GetIsWalking() ? maxrspd : maxwspd; // walk/run
 
         bool wasGrounded = grounded;
-        grounded = Physics.Raycast(transform.position, Vector3.down, 1.05f);
+
+        float radius = cc.radius * groundColliderMultiplier;
+        float distance = cc.bounds.extents.y - radius + groundProbeDistance;
+        RaycastHit hit;
+        grounded = Physics.SphereCast(rb.position, radius, Vector3.down, out hit, distance);
+
         if (!grounded && wasGrounded) {
             totime = Time.time;
         }
@@ -62,26 +71,6 @@ public class MovementController : MonoBehaviour
                 rb.drag = defaultDrag;
                 rb.AddForce(moveDir, ForceMode.Force);
             }
-        } else if (!grounded && !hasAirCountrol) {
-            // Apply air steering
-            float horizontalInput = il.GetInputHorizontal();
-            float verticalInput = il.GetInputVertical();
-
-            Vector3 airSteerDir = rb.velocity.normalized;
-            airSteerDir.y = 0f; // Disable vertical movement during air steering
-
-            Quaternion rotation = Quaternion.LookRotation(airSteerDir);
-            Vector3 localInput = new Vector3(horizontalInput, 0f, verticalInput);
-            Vector3 rotatedInput = rotation * localInput;
-
-            // Calculate the air steering force
-            Vector3 airSteerForce = rotatedInput.normalized * mfrc;
-
-            // Calculate the existing horizontal momentum
-            Vector3 horizontalMomentum = Vector3.ProjectOnPlane(rb.velocity, Vector3.up);
-
-            // Apply the air steering force while canceling the existing horizontal momentum
-            rb.AddForce(airSteerForce - horizontalMomentum, ForceMode.Force);
         }
 
         bool canJump = grounded && (Time.time - jtime) > jdelay;
