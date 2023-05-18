@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
   - component: {fileID: 330585549}
+  - component: {fileID: 330585550}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -468,6 +469,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsCap: 0
+--- !u!114 &330585550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95074dd02462e053aa925c92b3726202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsMenuUI: {fileID: 2113739717}
+  inputListener: {fileID: 954337131}
+  isMenuActive: 0
+  sensXtext: {fileID: 1574769538}
+  sensYtext: {fileID: 1779149343}
 --- !u!43 &454675230
 Mesh:
   m_ObjectHideFlags: 0
@@ -10818,6 +10836,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574769538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666236878596562316, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+    type: 3}
+  m_PrefabInstance: {fileID: 4333449041238188131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1650187636
 GameObject:
   m_ObjectHideFlags: 0
@@ -11110,6 +11140,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1779149343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1476828446332020443, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+    type: 3}
+  m_PrefabInstance: {fileID: 4333449041238188131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1800869889
 GameObject:
   m_ObjectHideFlags: 0
@@ -14529,6 +14571,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2113739717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034737887441062259, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+    type: 3}
+  m_PrefabInstance: {fileID: 4333449041238188131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2176555577302779730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14748,6 +14796,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 622602591852433052, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_isRichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 773690901688148554, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_isRichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190263744337968992, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190263744337968992, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190263744337968992, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4958428440428630426, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
         type: 3}
       propertyPath: m_Name
@@ -14807,6 +14880,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594709278827693358, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594709278827693358, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8594709278827693358, guid: 897c90f0c5d9a00f98f6bb216d1e8742,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897c90f0c5d9a00f98f6bb216d1e8742, type: 3}
