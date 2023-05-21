@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -10,10 +12,24 @@ public class SettingsMenu : MonoBehaviour
     public bool isMenuActive = false;
     public TMP_InputField sensXtext;
     public TMP_InputField sensYtext;
+    public AudioMixer masterMixer;
+    public Slider volumeSlider;
+    public Slider musicSlider;
 
     void Start() {
         sensXtext.text = inputListener.sensHorizontal.ToString();
         sensYtext.text = inputListener.sensVertical.ToString();
+
+        volumeSlider.onValueChanged.AddListener(UpdateVolumeMixer);
+        musicSlider.onValueChanged.AddListener(UpdateMusicMixer);
+    }
+
+    public void UpdateVolumeMixer(float value) {
+        masterMixer.SetFloat("masterVolume", value);
+    }
+
+    public void UpdateMusicMixer(float value) {
+        masterMixer.SetFloat("musicVolume", value);
     }
 
     void Update()

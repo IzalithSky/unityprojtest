@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun1 : Tool {
+public class Gun1 : Tool, DamageSource {
     public GameObject tracer;
     public ParticleSystem muzzleFlash;
     public GameObject impactFlash;
@@ -26,8 +26,6 @@ public class Gun1 : Tool {
             bm1.transform.parent = hit.transform.gameObject.transform;
             Destroy(bm1, bmarkTtl);
 
-            // Debug.Log(hit.transform.name);
-            // Destroy(hit.transform.gameObject);
             TryHit(hit.collider.gameObject);
         } else {
             DrawTracer(firePoint.position, lookPoint.forward * tracerDistance);
@@ -47,5 +45,9 @@ public class Gun1 : Tool {
         if (d != null) {
             d.Hit(damage);
         }
+    }
+
+    public int DealDamage() {
+        return 0;
     }
 }
