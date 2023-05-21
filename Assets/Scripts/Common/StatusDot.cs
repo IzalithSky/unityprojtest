@@ -15,7 +15,7 @@ public class StatusDot : Status
         if (Time.time >= nextTickTime)
         {            
             damageable.Hit(damagePerTick);
-            nextTickTime = Time.time + tickRate;
+            nextTickTime = Time.time + (1 / tickRate);
         }
     }
 }

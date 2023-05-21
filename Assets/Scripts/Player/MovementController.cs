@@ -46,7 +46,7 @@ public class MovementController : MonoBehaviour
             (rb.transform.right * il.GetInputHorizontal() 
             + rb.transform.forward * il.GetInputVertical())
             .normalized * mfrc;
-        maxspd = il.GetIsWalking() ? maxrspd : maxwspd; // walk/run
+        maxspd = il.GetIsWalking() ? maxwspd : maxrspd; // walk/run
 
         bool wasGrounded = grounded;
 

@@ -62,7 +62,7 @@ public class InputListener : MonoBehaviour
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
-        isWalking = Input.GetAxisRaw("Fire3") != 0f;
+        isWalking = Input.GetAxisRaw("Walk") != 0f;
         isJumping = Input.GetAxisRaw("Jump") != 0f;
         isFiring = Input.GetAxis("Fire1") != 0f;
         cameraHorizontal = Input.GetAxis("Mouse X") * sensHorizontal * Time.deltaTime;
