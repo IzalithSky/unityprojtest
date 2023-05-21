@@ -19,26 +19,12 @@ public class Projectile : MonoBehaviour {
 
         GameObject e1 = Instantiate(explosion, c.contacts[0].point, Quaternion.LookRotation(c.contacts[0].normal));
         Destroy(e1, 1f);
-
-        // if (bmarkLimit > 0) {
-        //     GameObject bm1 = Instantiate(bmark, c.contacts[0].point + (c.contacts[0].normal * .001f), Quaternion.FromToRotation(Vector3.up, c.contacts[0].normal));
-        //     Destroy(bm1, bmarkTtl);
-        //     bmarkLimit--;
-        // }
         
         Destroy(gameObject);
         TryHit(c.gameObject);
     }
 
     void Start() {
-        // if (null != lt) {
-        //     lt.color = new Color(
-        //         Random.Range(128, 255), 
-        //         Random.Range(128, 255), 
-        //         Random.Range(128, 255),
-        //         255f);
-        // }
-
         int projLayer = LayerMask.NameToLayer("Projectiles");
         Physics.IgnoreLayerCollision(projLayer, projLayer);
 
@@ -50,7 +36,7 @@ public class Projectile : MonoBehaviour {
         Destroy(gameObject, timeoutSec);
     }
 
-    void TryHit(GameObject go) {
+    protected virtual void TryHit(GameObject go) {
         Damageable d = go.GetComponent<Damageable>();
 
         if (d != null) {

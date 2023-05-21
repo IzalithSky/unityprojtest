@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1615095148690019602}
   - component: {fileID: 5300365103291432227}
   - component: {fileID: -141512062052948715}
+  - component: {fileID: 1947881702082532639}
   m_Layer: 0
   m_Name: PlayerM
   m_TagString: Untagged
@@ -235,6 +236,8 @@ MonoBehaviour:
   bfactor: 15
   jfrc: 5
   mfrc: 50
+  groundColliderMultiplier: 0.75
+  groundProbeDistance: 0.05
 --- !u!114 &1615095148690019602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +291,18 @@ MonoBehaviour:
   - {fileID: 4318038646063292183, guid: 2563e309ce80b1e9389fe5b72b88854f, type: 3}
   - {fileID: 4318038646063292183, guid: d0d29772e25fd9659b8169da0829d249, type: 3}
   - {fileID: 5455370826462973949, guid: b8c2a6c3871c4276e91cc011820add86, type: 3}
+--- !u!114 &1947881702082532639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9091077048443410405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be8f15bbc00e8c9297aa216d8d9dff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9091077048793198208
 GameObject:
   m_ObjectHideFlags: 0

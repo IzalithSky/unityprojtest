@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 53250902452406903}
   - component: {fileID: 7379403148904311375}
   - component: {fileID: 869118817408928054}
+  - component: {fileID: -5407974479662862688}
   m_Layer: 0
   m_Name: mob0
   m_TagString: Untagged
@@ -222,6 +223,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+--- !u!114 &-5407974479662862688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53250902452406902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7be8f15bbc00e8c9297aa216d8d9dff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5160844025403878461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,6 +252,12 @@ PrefabInstance:
       propertyPath: fireRateRps
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 753556795154919464, guid: ccd3f124eb7f699bea2373c5daf947b2,
+        type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8373390393789196344, guid: 4ecb42ed92e5d7212a83eef949cde28f,
+        type: 3}
     - target: {fileID: 5455370826201950211, guid: ccd3f124eb7f699bea2373c5daf947b2,
         type: 3}
       propertyPath: m_Layer

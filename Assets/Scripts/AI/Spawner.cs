@@ -15,8 +15,6 @@ public class Spawner : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other);
-
         if (Time.time - respwanTime >= respawnCooldown) {
             SpwanMobs();
             respwanTime = Time.time;
