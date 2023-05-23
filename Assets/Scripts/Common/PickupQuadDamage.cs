@@ -10,12 +10,12 @@ public class PickupQuadDamage : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         StatusController sc = other.GetComponentInChildren<StatusController>();
         if (sc != null) {
-            Weapon weapon = other.GetComponentInChildren<Weapon>();
-            if (weapon != null) {
+            DamageSource damageSource = other.GetComponentInChildren<DamageSource>();
+            if (damageSource != null) {
                 StatusExtraDamage qd = other.gameObject.AddComponent<StatusExtraDamage>();
                 qd.duration = duration;
                 qd.multiplier = multiplier;
-                qd.weapon = weapon;
+                qd.damageSource = damageSource;
 
                 sc.ApplyStatus(qd);
 

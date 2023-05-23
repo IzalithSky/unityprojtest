@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun1 : Weapon {
+public class Gun1 : DamageSource {
     public GameObject tracer;
     public ParticleSystem muzzleFlash;
     public GameObject impactFlash;
@@ -42,7 +42,7 @@ public class Gun1 : Weapon {
         Damageable d = go.GetComponent<Damageable>();
 
         if (d != null) {
-            d.Hit(DealDamage());
+            d.Hit(damageType, DealDamage());
         }
     }
 }

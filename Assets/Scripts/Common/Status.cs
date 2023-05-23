@@ -5,6 +5,7 @@ using UnityEngine;
 public class Status : MonoBehaviour 
 {
     public float duration = 1f;
+    public bool isPermanent = false;
 
     float startTime = 0f;
     bool isActive = true;
@@ -14,7 +15,7 @@ public class Status : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if (Time.time - startTime < duration) {
+        if (isPermanent || Time.time - startTime < duration) {
             Apply();
         } else {
             isActive = false;
@@ -22,7 +23,11 @@ public class Status : MonoBehaviour
     }
 
     public bool IsActive() {
-        return isActive;
+        if (isPermanent) {
+            return true;
+        } else {
+            return isActive;
+        }
     }
 
     public virtual void Apply() {}

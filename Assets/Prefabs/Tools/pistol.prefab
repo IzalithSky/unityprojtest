@@ -251,6 +251,9 @@ MonoBehaviour:
   toolName: Pistol
   ammoCount: 30
   usesAmmo: 1
+  damage: 55
+  multiplier: 1
+  damageType: 1
   tracer: {fileID: 2696618800695045305, guid: 8c8cdc1b7a01b67a0b8a87d3d9a53ba5, type: 3}
   muzzleFlash: {fileID: 8023714112317165203}
   impactFlash: {fileID: 6032995144665166442, guid: fd5a48fbf7f57e2bfbcfa63943edaf7f,
@@ -259,7 +262,6 @@ MonoBehaviour:
   bmarkTtl: 20
   tracerDistance: 100
   tracerTtl: 0.05
-  damage: 40
 --- !u!1 &6230081544587666307
 GameObject:
   m_ObjectHideFlags: 0

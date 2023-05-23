@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 7379403148904311375}
   - component: {fileID: 869118817408928054}
   - component: {fileID: -5407974479662862688}
+  - component: {fileID: 8701028632377325144}
   m_Layer: 0
   m_Name: mob0
   m_TagString: Untagged
@@ -235,6 +236,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be8f15bbc00e8c9297aa216d8d9dff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8701028632377325144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53250902452406902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda36c7cee28f3f378cd43b5d2acffbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  isPermanent: 0
+  damagable: {fileID: 869118817408928054}
+  damageType: 1
+  affinity: 0
 --- !u!1001 &5160844025403878461
 PrefabInstance:
   m_ObjectHideFlags: 0

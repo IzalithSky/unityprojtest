@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun0 : Weapon {
+public class Gun0 : DamageSource {
     public GameObject projectilePrefab;
     public float fireForce = 20f;
 

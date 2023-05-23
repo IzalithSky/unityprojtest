@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun2 : Weapon {
+public class Gun2 : DamageSource {
     public GameObject impactFlash;
     public GunAnimation anim;
 
@@ -17,8 +17,6 @@ public class Gun2 : Weapon {
             GameObject impfl = Instantiate(impactFlash, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impfl, impfl.GetComponent<ParticleSystem>().main.duration);
 
-            // Debug.Log(hit.transform.name);
-            // Destroy(hit.transform.gameObject);
             TryHit(hit.collider.gameObject);
         }   
     }
