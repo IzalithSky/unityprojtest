@@ -23,6 +23,7 @@ public class StatusController : MonoBehaviour
             Status status = statuses[i];
             if (!status.IsActive())
             {
+                status.RemoveStatus();
                 statuses.RemoveAt(i);
                 Destroy(status);
             }

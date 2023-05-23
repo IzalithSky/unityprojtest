@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun2 : Tool {
+public class Gun2 : Weapon {
     public GameObject impactFlash;
     public GunAnimation anim;
-    public int damage = 20;
 
     public float range = 1;
     public float splash = .2f;
@@ -28,7 +27,7 @@ public class Gun2 : Tool {
         Damageable d = go.GetComponent<Damageable>();
 
         if (d != null) {
-            d.Hit(damage);
+            d.Hit(DealDamage());
         }
     }
 }

@@ -25,5 +25,6 @@ public class Status : MonoBehaviour
         return isActive;
     }
 
-    protected virtual void Apply() {}
+    public virtual void Apply() {}
+    public virtual void RemoveStatus() {}
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShotgun : Tool
+public class ProjectileShotgun : Weapon
 {
     public GameObject projectilePrefab;
     public float fireForce = 20f;
@@ -23,6 +23,7 @@ public class ProjectileShotgun : Tool
 
             GameObject proj = Instantiate(projectilePrefab, spawnPosition, (null != lookPoint) ? lookPoint.rotation : firePoint.rotation);
             proj.GetComponent<Projectile>().launcher = owner;
+            proj.GetComponent<Projectile>().damage = DealDamage();
             proj.GetComponent<Rigidbody>().AddForce(spreadDirection * fireForce, ForceMode.Impulse);
         }
     }

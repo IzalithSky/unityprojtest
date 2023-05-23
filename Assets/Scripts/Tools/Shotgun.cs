@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shotgun : Tool
+public class Shotgun : Weapon
 {
     public GameObject tracer;
     public ParticleSystem muzzleFlash;
@@ -11,7 +11,6 @@ public class Shotgun : Tool
     public float bmarkTtl = 20f;
     public float tracerDistance = 100f;
     public float tracerTtl = 0.05f;
-    public int damage = 40;
     public int pelletCount = 16; // Number of projectiles to fire in the spread
     public float spreadAngle = 8f; // Spread angle in degrees
 
@@ -65,7 +64,7 @@ public class Shotgun : Tool
 
         if (d != null)
         {
-            d.Hit(damage);
+            d.Hit(DealDamage());
         }
     }
 }

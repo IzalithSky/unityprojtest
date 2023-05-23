@@ -10,7 +10,7 @@ public class StatusDot : Status
 
     float nextTickTime = 0f;
 
-    protected override void Apply()
+    public override void Apply()
     {
         if (Time.time >= nextTickTime)
         {            

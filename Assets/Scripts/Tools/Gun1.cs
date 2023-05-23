@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun1 : Tool, DamageSource {
+public class Gun1 : Weapon {
     public GameObject tracer;
     public ParticleSystem muzzleFlash;
     public GameObject impactFlash;
@@ -10,7 +10,6 @@ public class Gun1 : Tool, DamageSource {
     public float bmarkTtl = 20f;
     public float tracerDistance = 100f;
     public float tracerTtl = 0.05f;
-    public int damage = 40;
 
     protected override void FireReady() {
         muzzleFlash.Play();
@@ -43,11 +42,7 @@ public class Gun1 : Tool, DamageSource {
         Damageable d = go.GetComponent<Damageable>();
 
         if (d != null) {
-            d.Hit(damage);
+            d.Hit(DealDamage());
         }
-    }
-
-    public int DealDamage() {
-        return 0;
     }
 }
